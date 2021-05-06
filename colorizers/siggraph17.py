@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from .base_color import *
+import torch.utils.model_zoo as model_zoo
 
 class SIGGRAPHGenerator(BaseColor):
     def __init__(self, norm_layer=nn.BatchNorm2d, classes=529):
@@ -161,7 +162,8 @@ class SIGGRAPHGenerator(BaseColor):
 def siggraph17(pretrained=True):
     model = SIGGRAPHGenerator()
     if(pretrained):
-        trained_weights = torch.load('model.pth')
-        model.load_state_dict(trained_weights)
-
+        # trained_weghts = torch.load('model.pth')
+        # model.load_state_dict(trained_weights)
+        trained_weigts = model_zoo.load_url('https://colorizers.s3.us-east-2.amazonaws.com/siggraph17-df00044c.pth',map_location='cpu',check_hash=True)
+        model.load_state_dict()
     return model
