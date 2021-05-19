@@ -165,5 +165,5 @@ def siggraph17(pretrained=True):
         # trained_weghts = torch.load('model.pth')
         # model.load_state_dict(trained_weights)
         trained_weigts = model_zoo.load_url('https://colorizers.s3.us-east-2.amazonaws.com/siggraph17-df00044c.pth',map_location='cpu',check_hash=True)
-        model.load_state_dict()
+        model.load_state_dict(trained_weigts)
     return model
