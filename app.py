@@ -28,6 +28,9 @@ def fix_channels(img):
 
 
 ##################################### AI part end ############################################
+
+st.beta_set_page_config(page_title='AI colorizer')
+
 # st.title('Image colorizer')
 
 def small_title(x):
